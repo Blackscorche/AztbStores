@@ -27,13 +27,15 @@ function App() {
               <>
                 <Hero />
                 <Products />
-                <PriceList/>
+                <PriceList />
                 <ReviewForm onAddReview={handleAddReview} /> {/* Handle new reviews */}
+                <ReviewsList reviews={reviews} /> {/* Display reviews */}
               </>
             }
           />
           <Route path="/products" element={<Products />} />
           <Route path="/leave-review" element={<ReviewForm onAddReview={handleAddReview} />} />
+          <Route path="/reviews" element={<ReviewsList reviews={reviews} />} /> {/* Optional separate route */}
         </Routes>
       </main>
       <Footer />
