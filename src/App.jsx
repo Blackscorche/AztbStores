@@ -6,6 +6,7 @@ import Products from "./components/Products";
 import ReviewForm from "./components/ReviewForm";
 import ReviewsList from "./components/ReviewsList";  // Import ReviewsList
 import { Routes, Route } from "react-router-dom";
+import PriceList from "./components/PriceList";
 
 function App() {
   const [reviews, setReviews] = useState([]); // Initialize reviews as an empty array
@@ -26,6 +27,7 @@ function App() {
               <>
                 <Hero />
                 <Products />
+                <PriceList/>
                 <ReviewForm onAddReview={handleAddReview} /> {/* Handle new reviews */}
               </>
             }
