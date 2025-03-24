@@ -4,13 +4,13 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import ReviewForm from "./components/ReviewForm";
-import ReviewsList from "./components/Reviews";
+import ReviewsList from "./components/ReviewsList";  // Import ReviewsList
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [reviews, setReviews] = useState([]); // State to hold reviews
+  const [reviews, setReviews] = useState([]); // Initialize reviews as an empty array
 
-  // Function to add a new review (passed as prop)
+  // Function to handle adding new reviews
   const handleAddReview = (newReview) => {
     setReviews((prevReviews) => [...prevReviews, newReview]);
   };
@@ -20,32 +20,18 @@ function App() {
       <Navbar />
       <main>
         <Routes>
-          {/* Home Route */}
           <Route
             path="/"
             element={
               <>
                 <Hero />
                 <Products />
-                <ReviewsList reviews={reviews} /> {/* Pass reviews as prop */}
-                <ReviewForm />
+                <ReviewForm onAddReview={handleAddReview} /> {/* Handle new reviews */}
               </>
             }
           />
-
-          {/* Products Route */}
           <Route path="/products" element={<Products />} />
-
-          {/* Leave Review Route */}
-          <Route
-            path="/leave-review"
-            element={<ReviewForm onAddReview={handleAddReview} />} // Pass function to handle new reviews
-          />
-
-          <Route
-            path="/reviews"
-            element={<ReviewsList/>} // Pass function to handle new reviews
-          />
+          <Route path="/leave-review" element={<ReviewForm onAddReview={handleAddReview} />} />
         </Routes>
       </main>
       <Footer />

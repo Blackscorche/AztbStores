@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore"; // Import Firestore functions
-import { auth, provider, db } from "../firebase"; // Import `db` from firebase.js
+import { collection, addDoc, getDocs } from "firebase/firestore"; // Firestore functions
+import { auth, provider, db } from "../firebase"; // Importing db
 import { AlertCircle, LogOut, UserPlus } from "lucide-react";
 
 function ReviewForm({ onAddReview }) {
@@ -10,10 +10,24 @@ function ReviewForm({ onAddReview }) {
   const [rating, setRating] = useState(0);
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => setUser(user));
+    fetchReviews(); // Fetch reviews on component mount
   }, []);
+
+  const fetchReviews = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, "reviews"));
+      const reviewsData = querySnapshot.docs.map((doc) => doc.data());
+      // Sort by createdAt to ensure newest reviews come first
+      const sortedReviews = reviewsData.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      setReviews(sortedReviews);
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    }
+  };
 
   const handleLogin = async () => {
     setLoading(true);
@@ -44,22 +58,25 @@ function ReviewForm({ onAddReview }) {
     }
 
     try {
-      // Add review to Firestore
-      await addDoc(collection(db, "reviews"), {
-        user: user.displayName,
+      const newReview = {
+        userName: user.displayName || "Anonymous",
+        userPhoto: user.photoURL || "",
         review: review,
         rating: rating,
         createdAt: new Date().toISOString(),
-      });
+      };
+
+      // Add review to Firestore
+      await addDoc(collection(db, "reviews"), newReview);
 
       setReview("");
       setRating(0);
       setSuccessMessage("Review submitted successfully!");
+      onAddReview(newReview);
 
-      // Optionally pass data back to parent component
-      onAddReview({ user: user.displayName, review, rating });
+      // Add new review to the top of the list without fetching from Firestore
+      setReviews((prevReviews) => [newReview, ...prevReviews]);
 
-      // Reset success message after a delay
       setTimeout(() => setSuccessMessage(""), 3000);
     } catch (error) {
       console.error("Error submitting review:", error);
@@ -88,7 +105,7 @@ function ReviewForm({ onAddReview }) {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="bg-white p-6 rounded-xl shadow-md max-w-lg border border-blue-200"
+          className="bg-white p-6 rounded-xl shadow-md max-w-lg border border-blue-200 mb-6"
         >
           <div className="flex items-center justify-between bg-green-100 text-green-800 p-3 rounded-lg mb-4">
             <span>Welcome, {user.displayName}!</span>
@@ -136,6 +153,27 @@ function ReviewForm({ onAddReview }) {
           )}
         </form>
       )}
+
+      <div className="mt-8 max-w-lg">
+        <h3 className="text-2xl font-bold text-blue-900 mb-4">Reviews</h3>
+        {reviews.map((rev, index) => (
+          <div key={index} className="bg-white shadow-md p-4 rounded-lg mb-4 flex items-center">
+            <img
+              src={rev.userPhoto || `https://ui-avatars.com/api/?name=${(rev.userName && rev.userName[0]) || 'U'}`}
+              alt="User Avatar"
+              className="w-10 h-10 rounded-full mr-4"
+            />
+            <div>
+              <h4 className="font-semibold">{rev.userName || "Anonymous User"}</h4>
+              <p className="text-gray-600">{rev.review || "No review provided"}</p>
+              <div className="text-yellow-500">
+                {"★".repeat(rev.rating || 0)}{" "}
+                <span className="text-gray-400">{"★".repeat(5 - (rev.rating || 0))}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
