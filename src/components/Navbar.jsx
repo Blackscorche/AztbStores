@@ -39,7 +39,7 @@ export default function Navbar() {
         </ul>
 
         {/* Action Button */}
-        <Link to="/contact-us">
+        <Link to="/contact">
           <button className="hidden md:block bg-white text-blue-500 px-4 py-2 rounded-xl cursor-pointer font-medium shadow-md hover:bg-blue-600 transition duration-300">
             Contact Us
           </button>
@@ -78,7 +78,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/contact-us" className="hover:text-gray-400 transition duration-300" onClick={() => setOpen(false)}>
+            <Link to="/contact" className="hover:text-gray-400 transition duration-300" onClick={() => setOpen(false)}>
               Contact Us
             </Link>
           </li>
