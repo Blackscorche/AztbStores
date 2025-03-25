@@ -15,7 +15,7 @@ function Products() {
   ];
 
   return (
-    <section className="min-h-screen p-8 flex flex-col items-center">
+    <section className="min-h-screen p-8 flex flex-col items-center mt-8">
       <motion.h3
         className="text-blue-600 font-bold text-4xl mb-6"
         initial={{ opacity: 0, y: -50 }}

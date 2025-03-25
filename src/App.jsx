@@ -6,6 +6,7 @@ import Products from "./components/Products";
 import ReviewForm from "./components/ReviewForm";
 import { Routes, Route } from "react-router-dom";
 import PriceList from "./components/PriceList";
+import ContactPage from "./components/ContactPage";
 
 function App() {
   const [reviews, setReviews] = useState([]); // Initialize reviews as an empty array
@@ -33,7 +34,8 @@ function App() {
             }
           />
           <Route path="/products" element={<Products />} />
-          <Route path="/leave-review" element={<ReviewForm onAddReview={handleAddReview} />} />
+          <Route path="/pricelist" element={<PriceList  />} />
+          <Route path="/contact" element={<ContactPage  />} />
         </Routes>
       </main>
       <Footer />

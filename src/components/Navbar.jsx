@@ -32,8 +32,8 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/reviews" className="hover:text-gray-400 transition duration-300">
-              Reviews
+            <Link to="/pricelist" className="hover:text-gray-400 transition duration-300">
+              Pricelist
             </Link>
           </li>
         </ul>
@@ -73,13 +73,8 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/leave-reviews" className="hover:text-gray-400 transition duration-300" onClick={() => setOpen(false)}>
-              Leave a Review
-            </Link>
-          </li>
-          <li>
-            <Link to="/reviews" className="hover:text-gray-400 transition duration-300" onClick={() => setOpen(false)}>
-              Reviews
+            <Link to="/pricelist" className="hover:text-gray-400 transition duration-300" onClick={() => setOpen(false)}>
+              Pricelist
             </Link>
           </li>
           <li>
@@ -87,16 +82,7 @@ export default function Navbar() {
               Contact Us
             </Link>
           </li>
-          <li>
-            <Link to="/products">
-              <button
-                className="bg-white text-black px-4 py-2 rounded-xl cursor-pointer font-medium shadow-md hover:bg-gray-500 transition duration-300"
-                onClick={() => setOpen(false)}
-              >
-                Shop Now
-              </button>
-            </Link>
-          </li>
+
         </ul>
       </div>
     </nav>
