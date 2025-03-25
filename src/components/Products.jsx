@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import laptop from '../assets/Macbook.png';
 import phone from '../assets/iphone16.png';
-import tablet from '../assets/iPad.jpg';
+import tablet from '../assets/ipad.jpg';
 
 function Products() {
   const products = [
