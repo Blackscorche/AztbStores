@@ -164,10 +164,14 @@ function ReviewForm({ onAddReview }) {
           </div>
         ))}
         {visibleReviews < reviews.length && (
-          <button onClick={handleViewMore} className="w-full mt-4 bg-blue-500 text-white py-2 rounded-lg">
-            View More
-          </button>
+          <div className="flex justify-center mt-4 mb-3">
+            <button onClick={handleViewMore} className="bg-blue-500 text-white py-2 px-4 rounded-lg">
+              View More
+            </button>
+          </div>
         )}
+
+
       </div>
     </div>
   );
