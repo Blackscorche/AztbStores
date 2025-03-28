@@ -16,12 +16,7 @@ const categories = [
         description: 'High-performance laptops for work, gaming, and creativity.',
         route: '/laptopcategory',
     },
-    {
-        name: 'Smartwatches',
-        image: 'https://images.unsplash.com/photo-1531384443288-cd81ab6d6e3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
-        description: 'Stay connected and track your fitness on the go.',
-        route: '/smartwatchescategories',
-    },
+
     {
         name: 'IMacs',
         image: 'https://images.unsplash.com/photo-1587202372775-51c3a0b2ce41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
