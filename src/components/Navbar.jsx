@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Logo from '../assets/Logo.png'
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -16,7 +17,12 @@ export default function Navbar() {
       <div className="flex justify-between items-center px-4 md:px-6">
         {/* Logo */}
         <Link to="/" className="text-white text-xl font-bold tracking-wide">
-          AZTB Store
+          <img
+            src={Logo}
+            className="w-[150px] h-[50px] ml-[-20px] object-contain"
+            alt="Logo"
+          />
+
         </Link>
 
         {/* Menu - Desktop */}
@@ -57,9 +63,8 @@ export default function Navbar() {
 
       {/* Mobile Menu - Expanding smoothly */}
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <ul className="flex flex-col gap-4 text-white text-lg font-medium px-4 py-3">
           <li>

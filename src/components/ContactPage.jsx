@@ -5,7 +5,7 @@ import { Phone, Mail, Instagram, Facebook, MessageCircle } from "lucide-react";
 
 const ContactPage = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-blue-50">
+    <div className="flex justify-center items-center min-h-screen bg-blue-50 mt-10">
       <div className="w-full max-w-md bg-white rounded-xl shadow-md p-6">
         <h2 className="text-3xl font-semibold text-center text-blue-600 mb-4">
           Contact Us

@@ -4,12 +4,27 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Products from "./components/Products";
 import ReviewForm from "./components/ReviewForm";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom"; // Import useLocation for route tracking
+import { useEffect } from "react"; // useEffect to handle scroll reset
 import PriceList from "./components/PriceList";
 import ContactPage from "./components/ContactPage";
+import ProductCategories from "./components/ProductCategories";
+import SmartphonePrices from "./components/PriceLists/SmartphonePrices";
+import LaptopCategory from "./components/CategoriesCat/LaptopCategory";
+import UkUsedMacBooks from "./components/PriceLists/UkUsedMacBooks";
+import BrandNewMacBooks from "./components/PriceLists/BrandNewMac";
+import ImacCategories from "./components/CategoriesCat/ImacCategories";
+import BrandNewImac from "./components/PriceLists/BrandNewImac";
+import UkUsedImac from "./components/PriceLists/UkUsedImac";
 
 function App() {
   const [reviews, setReviews] = useState([]); // Initialize reviews as an empty array
+
+  // Scroll to top on route change
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0); // Reset scroll to top whenever the route changes
+  }, [location.pathname]); // Triggers every time pathname changes
 
   // Function to handle adding new reviews
   const handleAddReview = (newReview) => {
@@ -29,13 +44,26 @@ function App() {
                 <Products />
                 <PriceList />
                 <ReviewForm onAddReview={handleAddReview} /> {/* Handle new reviews */}
-
               </>
             }
           />
           <Route path="/products" element={<Products />} />
-          <Route path="/pricelist" element={<PriceList  />} />
-          <Route path="/contact" element={<ContactPage  />} />
+          <Route path="/pricelist" element={<PriceList />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/categories" element={<ProductCategories />} />
+          <Route path="/smartphoneprices" element={<SmartphonePrices />} />
+          <Route path="/laptopcategory" element={<LaptopCategory />} />
+          <Route path="/ukusedmacbooks" element={<UkUsedMacBooks />} />
+          
+          <Route path="/brandnewmacbooks" element={<BrandNewMacBooks />} />
+          <Route path="/brandnewimacs" element={<BrandNewImac />} />
+          <Route path="/ukusedimacs" element={<UkUsedImac />} />
+          
+
+          
+          <Route path="/imaccategory" element={<ImacCategories />} />
+
+          
         </Routes>
       </main>
       <Footer />
