@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom'; // For navigation links
 // Updated categories with relevant routes and images
 const categories = [
     {
-        name: 'Smartphones',
+        name: 'Smartphones & Accessories',
         image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
-        description: 'Discover the latest smartphones with advanced features.',
-        route: '/smartphonescategory',
+        description: 'Discover the latest smartphones & Accesories with advanced features.',
+        route: '/smartphonescategories',
     },
     {
         name: 'Laptops',
@@ -27,6 +27,12 @@ const categories = [
         image: 'https://images.unsplash.com/photo-1587202372775-51c3a0b2ce41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
         description: 'Experience power and elegance with the latest iMacs.',
         route: '/imaccategory',
+    },
+    {
+        name: 'IPads',
+        image: 'https://images.unsplash.com/photo-1593642632823-4b8f2c0e1a5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        description: 'Discover versatile and powerful iPads for work, creativity, and entertainment.',
+        route: '/ipads',
     },
 ];
 

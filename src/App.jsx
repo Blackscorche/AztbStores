@@ -16,7 +16,11 @@ import BrandNewMacBooks from "./components/PriceLists/BrandNewMac";
 import ImacCategories from "./components/CategoriesCat/ImacCategories";
 import BrandNewImac from "./components/PriceLists/BrandNewImac";
 import UkUsedImac from "./components/PriceLists/UkUsedImac";
-
+import BrandNewSmartwatches from "./components/PriceLists/BrandNewSmartwatch";
+import SmartwatchesCategories from "./components/CategoriesCat/SmartwatchesCategories";
+import UkUsedSmartWatches from "./components/PriceLists/UkUsedSmartwatches";  
+import BrandNewIpads from "./components/PriceLists/BrandNewIpads";
+import SmartphoneCategory from "./components/CategoriesCat/SmartphoneCategory";
 function App() {
   const [reviews, setReviews] = useState([]); // Initialize reviews as an empty array
 
@@ -58,11 +62,14 @@ function App() {
           <Route path="/brandnewmacbooks" element={<BrandNewMacBooks />} />
           <Route path="/brandnewimacs" element={<BrandNewImac />} />
           <Route path="/ukusedimacs" element={<UkUsedImac />} />
-          
-
-          
           <Route path="/imaccategory" element={<ImacCategories />} />
-
+          
+          <Route path="/smartwatchescategories" element={<SmartwatchesCategories />} />
+          <Route path="/brandnewsmartwatches" element={<BrandNewSmartwatches />} />
+          <Route path="/ukusedsmartwatches" element={< UkUsedSmartWatches/>} />
+          <Route path="/ipads" element={< BrandNewIpads/>} />
+          <Route path="/smartphonescategories" element={<SmartphoneCategory />} />
+          
           
         </Routes>
       </main>
