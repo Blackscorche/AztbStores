@@ -6,12 +6,12 @@ import tablet from '../assets/ipad.jpg';
 
 function Products() {
   const products = [
-    { id: 1, title: 'MacBook Pro', price: '$1,200', image: laptop },
-    { id: 2, title: 'iPhone 14 Pro', price: '$999', image: phone },
-    { id: 3, title: 'iPad Air', price: '$600', image: tablet },
-    { id: 4, title: 'MacBook Air', price: '$1,000', image: laptop },
-    { id: 5, title: 'iPhone SE', price: '$400', image: phone },
-    { id: 6, title: 'iPad Pro', price: '$1,100', image: tablet },
+    { id: 1, title: 'MacBook Pro', image: laptop },
+    { id: 2, title: 'iPhone 14 Pro',image: phone },
+    { id: 3, title: 'iPad Air',  image: tablet },
+    { id: 4, title: 'MacBook Air', image: laptop },
+    { id: 5, title: 'iPhone SE', image: phone },
+    { id: 6, title: 'iPad Pro', image: tablet },
   ];
 
   return (
@@ -58,7 +58,6 @@ function Products() {
               >
                 {product.title}
               </motion.h4>
-              <p className="text-lg text-green-500 font-semibold">{product.price}</p>
             </div>
             <motion.div
               className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-500 via-transparent to-blue-500 opacity-0 group-hover:opacity-30 transition-opacity duration-300"

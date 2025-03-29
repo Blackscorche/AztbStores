@@ -9,7 +9,7 @@ import { useEffect } from "react"; // useEffect to handle scroll reset
 import PriceList from "./components/PriceList";
 import ContactPage from "./components/ContactPage";
 import ProductCategories from "./components/ProductCategories";
-import SmartphonePrices from "./components/PriceLists/SmartphonePrices";
+
 import LaptopCategory from "./components/CategoriesCat/LaptopCategory";
 import UkUsedMacBooks from "./components/PriceLists/UkUsedMacBooks";
 import BrandNewMacBooks from "./components/PriceLists/BrandNewMac";
@@ -18,9 +18,24 @@ import BrandNewImac from "./components/PriceLists/BrandNewImac";
 import UkUsedImac from "./components/PriceLists/UkUsedImac";
 import BrandNewSmartwatches from "./components/PriceLists/BrandNewSmartwatch";
 import SmartwatchesCategories from "./components/CategoriesCat/SmartwatchesCategories";
-import UkUsedSmartWatches from "./components/PriceLists/UkUsedSmartwatches";  
+import UkUsedSmartWatches from "./components/PriceLists/UkUsedSmartWatches";  
 import BrandNewIpads from "./components/PriceLists/BrandNewIpads";
 import SmartphoneCategory from "./components/CategoriesCat/SmartphoneCategory";
+import IphoneCategory from "./components/CategoriesCat/IphoneCategory";
+import BrandNewIphone from "./components/PriceLists/BrandNewIphone";
+import UkUsedIphone from "./components/PriceLists/UkUsedIphone";
+import BrandNewSamsungs from "./components/PriceLists/BrandNewSamsungs";
+import SamsungCategories from "./components/CategoriesCat/smartphoneCat/SamsungCategories";
+import SamsungInternationalWarranty from "./components/PriceLists/SamsungInternationalWarranty";
+import SamsungNigeriaWarranty from "./components/PriceLists/SamsungNigeriaWarranty";
+import UkUsedSamsung from "./components/PriceLists/UkUsedSamsungs";
+import OppoPriceList from "./components/PriceLists/OppoPriceList";
+import RedmiPriceList from "./components/PriceLists/RedmiPriceList";
+import GooglePixelCategories from "./components/CategoriesCat/smartphoneCat/GooglePixelCategories";
+import BrandNewGooglePixel from "./components/PriceLists/BrandNewGooglePixel";
+import UkUsedGooglePixel from "./components/PriceLists/UkUsedGooglePixel";
+import TecnoPriceList from "./components/PriceLists/TecnoPriceList";
+import BrandNewInfinix from "./components/PriceLists/BrandNewInfinix";
 function App() {
   const [reviews, setReviews] = useState([]); // Initialize reviews as an empty array
 
@@ -55,20 +70,40 @@ function App() {
           <Route path="/pricelist" element={<PriceList />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/categories" element={<ProductCategories />} />
-          <Route path="/smartphoneprices" element={<SmartphonePrices />} />
+
           <Route path="/laptopcategory" element={<LaptopCategory />} />
           <Route path="/ukusedmacbooks" element={<UkUsedMacBooks />} />
-          
           <Route path="/brandnewmacbooks" element={<BrandNewMacBooks />} />
           <Route path="/brandnewimacs" element={<BrandNewImac />} />
           <Route path="/ukusedimacs" element={<UkUsedImac />} />
           <Route path="/imaccategory" element={<ImacCategories />} />
-          
           <Route path="/smartwatchescategories" element={<SmartwatchesCategories />} />
           <Route path="/brandnewsmartwatches" element={<BrandNewSmartwatches />} />
           <Route path="/ukusedsmartwatches" element={< UkUsedSmartWatches/>} />
           <Route path="/ipads" element={< BrandNewIpads/>} />
           <Route path="/smartphonescategories" element={<SmartphoneCategory />} />
+          
+          <Route path="/iphonecategories" element={<IphoneCategory />} />
+
+          <Route path="/brandnewiphones" element={<BrandNewIphone />} />
+          <Route path="/ukusediphones" element={<UkUsedIphone />} />
+
+          <Route path="/brandnewsamsungs" element={<BrandNewSamsungs />} />
+
+          <Route path="/samsungcategories" element={<SamsungCategories />} />
+          <Route path="/samsungnigeriawarranty" element={<SamsungNigeriaWarranty/>} />
+          <Route path="/samsunginternationalwarranty" element={<SamsungInternationalWarranty />} />
+
+          <Route path="/ukusedsamsung" element={<UkUsedSamsung />} />
+
+          <Route path="/oppo" element={<OppoPriceList/>} />
+          <Route path="/redmi" element={<RedmiPriceList />} />
+          <Route path="/googlepixel" element={<GooglePixelCategories />} />
+          <Route path="/brandnewgooglepixel" element={<BrandNewGooglePixel />} />
+          <Route path="/ukusedgooglepixel" element={<UkUsedGooglePixel />} />  
+
+          <Route path="/tecno" element={<TecnoPriceList />} />  
+          <Route path="/infinix" element={<BrandNewInfinix />} />
           
           
         </Routes>

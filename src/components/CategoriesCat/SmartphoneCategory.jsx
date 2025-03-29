@@ -8,13 +8,13 @@ const categories = [
     name: 'Iphone',
     image: 'https://images.unsplash.com/photo-1512499617640-c2f9992f0d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
     description: 'Explore the latest iPhones with advanced features and sleek designs.',
-    route: '/iphone',
+    route: '/iphonecategories',
   },
   {
     name: 'Samsung',
     image: 'https://images.unsplash.com/photo-1580910051070-7c9b7c6d9b5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
     description: 'Discover Samsung smartphones with cutting-edge technology.',
-    route: '/samsung',
+    route: '/samsungcategories',
   },
   {
     name: 'Redmi',
