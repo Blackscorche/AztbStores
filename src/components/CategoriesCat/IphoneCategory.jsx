@@ -1,17 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // For animations
 import { Link } from 'react-router-dom'; // For navigation links
-
+import newiphone from '../../assets/newiphone.png'; // Import new iPhone image
+import ukusediphone from '../../assets/ukusediphone.png'; // Import used iPhone image
 // iPhone categories
 const categories = [
     {
         name: 'Brand New iPhones',
-        image: 'https://images.unsplash.com/photo-1512499617640-c2f9992f0d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: newiphone,
         description: 'Explore the latest collection of brand-new iPhones with advanced features.',
     },
     {
         name: 'UK Used iPhones',
-        image: 'https://images.unsplash.com/photo-1580910051070-7c9b7c6d9b5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image:ukusediphone,
         description: 'Get budget-friendly and reliable UK Used iPhones at unbeatable prices.',
     },
 ];

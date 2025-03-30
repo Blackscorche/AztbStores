@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { Smartphone, Truck, Headphones } from "lucide-react";
 import iphone from "../assets/iphone16.png";
 import samsung from "../assets/samsung25.png";
@@ -47,9 +48,11 @@ const Hero = () => {
               prices.
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg cursor-pointer font-semibold transition duration-300">
-                Explore Products
-              </button>
+              <Link to="/products">
+                <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg cursor-pointer font-semibold transition duration-300">
+                  Explore Products
+                </button>
+              </Link>
             </div>
           </motion.div>
 

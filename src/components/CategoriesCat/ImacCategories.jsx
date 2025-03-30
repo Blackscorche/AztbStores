@@ -1,17 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // For animations
 import { Link } from 'react-router-dom'; // For navigation links
+import newimac from '../../assets/newimac.png'; // Import new iMac image
+import ukusedimac from '../../assets/ukusedimac.png'; // Import UK Used iMac image
 
-// iMac categories for the showcase
 const categories = [
     {
         name: 'Brand New iMacs',
-        image: 'https://images.unsplash.com/photo-1554188248-986adbb73c67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: newimac,
         description: 'Discover the latest brand-new iMacs with cutting-edge performance and sleek design.',
     },
     {
         name: 'UK Used iMacs',
-        image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: ukusedimac,
         description: 'Get reliable and affordable UK Used iMacs with great value for your money.',
     },
 ];
@@ -33,11 +34,13 @@ const ImacCategories = () => {
                         transition={{ duration: 0.5, delay: index * 0.2 }}
                         className="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 shadow-lg bg-white"
                     >
-                        <img
-                            src={category.image}
-                            alt={`Image of ${category.name}`}
-                            className="w-full h-40 object-cover"
-                        />
+                        <div className="w-full h-48 flex items-center justify-center bg-gray-100">
+                            <img
+                                src={category.image}
+                                alt={`Image of ${category.name}`}
+                                className="max-w-full max-h-full object-contain" // Ensures the image fits within the container
+                            />
+                        </div>
                         <div className="p-6">
                             <h3 className="text-2xl font-semibold text-gray-800 mb-2">{category.name}</h3>
                             <p className="text-sm text-gray-600 mb-4">{category.description}</p>

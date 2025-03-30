@@ -1,17 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import laptop from '../assets/Macbook.png';
-import phone from '../assets/iphone16.png';
+import phone from '../assets/iphone14pro.jpg';
+import ipadpro from '../assets/ipadpro.jpg';
+import iphonese from '../assets/iphonese.jpg';
 import tablet from '../assets/ipad.jpg';
-
+import macbookpro from '../assets/macbookspro.jpg'; // Import MacBook Pro image
+import macbookair from '../assets/macbookair.jpg'; // Import MacBook Air image
 function Products() {
   const products = [
-    { id: 1, title: 'MacBook Pro', image: laptop },
-    { id: 2, title: 'iPhone 14 Pro',image: phone },
-    { id: 3, title: 'iPad Air',  image: tablet },
-    { id: 4, title: 'MacBook Air', image: laptop },
-    { id: 5, title: 'iPhone SE', image: phone },
-    { id: 6, title: 'iPad Pro', image: tablet },
+    { id: 1, title: 'MacBook Pro', image: macbookpro },
+    { id: 2, title: 'iPhone 14 Pro', image: phone },
+    { id: 3, title: 'iPad Air', image: tablet },
+    { id: 4, title: 'MacBook Air', image: macbookair },
+    { id: 5, title: 'iPhone SE', image: iphonese },
+    { id: 6, title: 'iPad Pro', image: ipadpro },
   ];
 
   return (
@@ -47,7 +50,7 @@ function Products() {
             <motion.img
               src={product.image}
               alt={product.title}
-              className="w-full h-60 object-cover rounded-t-lg group-hover:opacity-90"
+              className="w-full h-60 object-cover group-hover:opacity-90" // Changed to object-cover
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
             />

@@ -1,68 +1,56 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // For animations
 import { Link } from 'react-router-dom'; // For navigation links
+import iphone16 from '../../assets/iphone16.png'; // Import iPhone image
+import samsung25 from '../../assets/samsung25.png'; // Import Samsung image
+import redmi from '../../assets/redmibanner.png'; // Import Redmi image
+import tecnobanner from '../../assets/tecnobanner.png'; // Import Tecno image
+import infinixbanner from '../../assets/infinixbanner.png'; // Import Infinix image
+import oppobanner from '../../assets/oppobanner.png'; // Import Oppo image
+import googlepixelbanner from '../../assets/pixelbanner.png'; // Import Google Pixel image
 
-// Smartphone and Accessories Categories
 const categories = [
   {
     name: 'Iphone',
-    image: 'https://images.unsplash.com/photo-1512499617640-c2f9992f0d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+    image: iphone16,
     description: 'Explore the latest iPhones with advanced features and sleek designs.',
     route: '/iphonecategories',
   },
   {
     name: 'Samsung',
-    image: 'https://images.unsplash.com/photo-1580910051070-7c9b7c6d9b5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+    image: samsung25,
     description: 'Discover Samsung smartphones with cutting-edge technology.',
     route: '/samsungcategories',
   },
   {
     name: 'Redmi',
-    image: 'https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+    image: redmi,
     description: 'Affordable and powerful Redmi smartphones for everyone.',
     route: '/redmi',
   },
   {
     name: 'Tecno',
-    image: 'https://images.unsplash.com/photo-1598327102040-5d4d6c3b9b8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+    image: tecnobanner,
     description: 'Stylish and budget-friendly Tecno smartphones.',
     route: '/tecno',
   },
   {
     name: 'Infinix',
-    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+    image: infinixbanner,
     description: 'High-performance Infinix smartphones at great prices.',
     route: '/infinix',
   },
   {
     name: 'Oppo',
-    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+    image: oppobanner,
     description: 'Experience innovation with Oppo smartphones.',
     route: '/oppo',
   },
   {
     name: 'Google Pixel',
-    image: 'https://images.unsplash.com/photo-1587202372775-51c3a0b2ce41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+    image: googlepixelbanner,
     description: 'Capture stunning photos with Google Pixel phones.',
     route: '/googlepixel',
-  },
-  {
-    name: 'AirPods',
-    image: 'https://images.unsplash.com/photo-1593642632823-4b8f2c0e1a5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
-    description: 'Wireless and immersive sound with AirPods.',
-    route: '/airpods',
-  },
-  {
-    name: 'Keyboard',
-    image: 'https://images.unsplash.com/photo-1512499617640-c2f9992f0d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
-    description: 'Enhance your productivity with high-quality keyboards.',
-    route: '/keyboard',
-  },
-  {
-    name: 'Pencil',
-    image: 'https://images.unsplash.com/photo-1580910051070-7c9b7c6d9b5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
-    description: 'Unleash your creativity with the Apple Pencil.',
-    route: '/pencil',
   },
 ];
 
@@ -83,11 +71,13 @@ function SmartphoneCategory() {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             className="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 shadow-md bg-white"
           >
-            <img
-              src={category.image}
-              alt={`Image of ${category.name}`}
-              className="w-full h-40 object-cover"
-            />
+            <div className="w-full h-48 flex items-center justify-center bg-gray-100">
+              <img
+                src={category.image}
+                alt={`Image of ${category.name}`}
+                className="max-w-full max-h-full object-contain" // Ensures the image fits within the container
+              />
+            </div>
             <div className="p-4">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{category.name}</h3>
               <p className="text-sm text-gray-600 mb-4">{category.description}</p>

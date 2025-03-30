@@ -36,6 +36,17 @@ import BrandNewGooglePixel from "./components/PriceLists/BrandNewGooglePixel";
 import UkUsedGooglePixel from "./components/PriceLists/UkUsedGooglePixel";
 import TecnoPriceList from "./components/PriceLists/TecnoPriceList";
 import BrandNewInfinix from "./components/PriceLists/BrandNewInfinix";
+
+import AccesoriesCat from "./components/CategoriesCat/AccesoriesCat";
+import TabletCategories from "./components/CategoriesCat/TabletsCategories";
+import SamsungTabCat from "./components/CategoriesCat/SamsungTabCat";
+import EarbudsPriceList from "./components/PriceLists/EarbudsPricelist";
+import KeyboardPricelist from "./components/PriceLists/KeyboardPricelists";
+import PencilPricelist from "./components/PriceLists/PencilPricelists";
+import SamsungTabPricelist from "./components/PriceLists/SamsungTabPricelist";
+import XiaomiTabsPriceList from "./components/PriceLists/XiaomiTabsPricelists";
+import InfinixTabPriceList from "./components/PriceLists/InfinixTabPricelist";
+
 function App() {
   const [reviews, setReviews] = useState([]); // Initialize reviews as an empty array
 
@@ -67,7 +78,7 @@ function App() {
             }
           />
           <Route path="/products" element={<Products />} />
-          <Route path="/pricelist" element={<PriceList />} />
+          <Route path="/pricelist" element={<ProductCategories />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/categories" element={<ProductCategories />} />
 
@@ -80,7 +91,7 @@ function App() {
           <Route path="/smartwatchescategories" element={<SmartwatchesCategories />} />
           <Route path="/brandnewsmartwatches" element={<BrandNewSmartwatches />} />
           <Route path="/ukusedsmartwatches" element={< UkUsedSmartWatches/>} />
-          <Route path="/ipads" element={< BrandNewIpads/>} />
+          <Route path="/appletablets" element={< BrandNewIpads/>} />
           <Route path="/smartphonescategories" element={<SmartphoneCategory />} />
           
           <Route path="/iphonecategories" element={<IphoneCategory />} />
@@ -104,7 +115,21 @@ function App() {
 
           <Route path="/tecno" element={<TecnoPriceList />} />  
           <Route path="/infinix" element={<BrandNewInfinix />} />
-          
+          <Route path="/earbuds" element={<EarbudsPriceList />} />
+
+          <Route path="/accessories" element={<AccesoriesCat />} />
+
+          <Route path="/tablets" element={<TabletCategories/>} />
+          <Route path="/samsungtabs" element=
+          {<SamsungTabPricelist />} />
+
+          <Route path="/xiaomitabs" element={<XiaomiTabsPriceList />} />
+
+          <Route path="/infinixtablets" element={<InfinixTabPriceList />} />
+
+          <Route path="/keyboard" element={<KeyboardPricelist />} />
+
+          <Route path="/pencil" element={<PencilPricelist />} />
           
         </Routes>
       </main>

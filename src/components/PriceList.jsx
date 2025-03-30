@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Add this import for the Link component
+import { Link } from 'react-router-dom';
 
 const PriceList = () => {
   const data = {
@@ -10,9 +10,17 @@ const PriceList = () => {
       { name: "MacBook Air 2022 13\" M2 Chip", specs: "8GB RAM, 256GB SSD", price: "₦1,550,000" },
     ],
     "SmartPhones": [
-      { name: "MacBook Pro 2024 14\" M4 Pro Chip", specs: "24GB RAM, 512GB SSD", price: "₦3,220,000" },
-      { name: "MacBook Pro 2023 16\" M3 Max Chip", specs: "36GB RAM, 1TB SSD", price: "₦4,500,000" },
-     ],
+      { name: "iPhone 14 Pro Max", specs: "128GB, A16 Bionic Chip", price: "₦1,200,000" },
+      { name: "Samsung Galaxy S23 Ultra", specs: "256GB, Snapdragon 8 Gen 2", price: "₦1,500,000" },
+      { name: "Google Pixel 7 Pro", specs: "128GB, Tensor G2", price: "₦900,000" },
+      { name: "Xiaomi 13 Pro", specs: "256GB, Snapdragon 8 Gen 2", price: "₦850,000" },
+    ],
+    "Earbuds": [
+      { name: "AirPods Pro 2", specs: "Active Noise Cancellation, Type-C", price: "₦330,000" },
+      { name: "Galaxy Buds 2 Pro", specs: "Hi-Fi Sound, ANC", price: "₦180,000" },
+      { name: "Google Pixel Buds Pro", specs: "ANC, Long Battery Life", price: "₦250,000" },
+      { name: "Xiaomi Buds 3 Pro", specs: "ANC, Dual Device Connection", price: "₦255,000" },
+    ],
   };
 
   return (
@@ -23,7 +31,7 @@ const PriceList = () => {
           <div key={category} className="border-b border-gray-200">
             <h2 className="bg-blue-600 text-white text-lg font-semibold p-4">{category}</h2>
             <ul className="divide-y divide-gray-100">
-              {data[category].map((item, index) => (
+              {data[category].slice(0, 3).map((item, index) => (
                 <li key={index} className="p-4 flex justify-between items-center hover:bg-gray-50 transition-all duration-300">
                   <div>
                     <p className="text-gray-700 font-medium">{item.name}</p>

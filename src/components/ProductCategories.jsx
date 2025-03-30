@@ -1,38 +1,50 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // For animations
 import { Link } from 'react-router-dom'; // For navigation links
-
+import smartphones from '../assets/smartphones.png'; // Import smartphones image
+import LaptopBanner from '../assets/LaptopBanner.png';
+import smartwatchesbanner from '../assets/newsmartwatches.png'; // Import smartwatches image
+import TabBanner from '../assets/appletab.png'; // Import tablets image
+import ImacBanner from '../assets/newimac.png'; // Import iMac image
+import AccesoriesBanner from '../assets/AccesoriesBanner.jpg'; // Import accessories image
+import macbookpro from '../assets/macbookspro.jpg'; // Import MacBook Pro image
 // Updated categories with relevant routes and images
 const categories = [
     {
-        name: 'Smartphones & Accessories',
-        image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
-        description: 'Discover the latest smartphones & Accesories with advanced features.',
+        name: 'Smartphones',
+        image: smartphones, // Use the smartphones variable directly
+        description: 'Discover the latest smartphones with advanced features.',
         route: '/smartphonescategories',
     },
     {
         name: 'Laptops',
-        image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: LaptopBanner,
         description: 'High-performance laptops for work, gaming, and creativity.',
         route: '/laptopcategory',
     },
     {
         name: 'Smartwatches',
-        image: 'https://images.unsplash.com/photo-1531384443288-cd81ab6d6e3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: smartwatchesbanner,
         description: 'Stay connected and track your fitness on the go.',
         route: '/smartwatchescategories',
     },
     {
         name: 'IMacs',
-        image: 'https://images.unsplash.com/photo-1587202372775-51c3a0b2ce41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: ImacBanner,
         description: 'Experience power and elegance with the latest iMacs.',
         route: '/imaccategory',
     },
     {
-        name: 'IPads',
-        image: 'https://images.unsplash.com/photo-1593642632823-4b8f2c0e1a5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
-        description: 'Discover versatile and powerful iPads for work, creativity, and entertainment.',
-        route: '/ipads',
+        name: 'Tablets',
+        image: TabBanner,
+        description: 'Discover versatile and powerful tablets for work, creativity, and entertainment.',
+        route: '/tablets',
+    },
+    {
+        name: 'Accessories',
+        image: AccesoriesBanner,
+        description: 'Explore a wide range of accessories like headphones, keyboards, and pencils.',
+        route: '/accessories',
     },
 ];
 
@@ -56,7 +68,7 @@ const ProductCategories = () => {
                         <img
                             src={category.image}
                             alt={`Image of ${category.name}`}
-                            className="w-full h-40 object-cover"
+                            className="w-full h-50 object-contain my-3" // Changed from object-cover to object-contain
                         />
                         <div className="p-4">
                             <h3 className="text-xl font-semibold text-gray-800 mb-2">{category.name}</h3>

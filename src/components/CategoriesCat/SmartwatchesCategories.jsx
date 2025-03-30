@@ -1,17 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // For animations
 import { Link } from 'react-router-dom'; // For navigation links
+import newsmartwatch from '../../assets/newsmartwatches.png'; // Import new smartwatch image
+import ukusedsmartwatches from '../../assets/ukusedsmartwatches.png'; // Import UK Used smartwatch image
 
 // Smartwatch categories
 const categories = [
     {
         name: 'Brand New Smartwatches',
-        image: 'https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: newsmartwatch,
         description: 'Discover the latest collection of brand-new smartwatches with cutting-edge features.',
     },
     {
         name: 'UK Used Smartwatches',
-        image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+        image: ukusedsmartwatches,
         description: 'Find affordable and reliable UK Used smartwatches at great prices.',
     },
 ];
@@ -33,11 +35,13 @@ const SmartwatchesCategories = () => {
                         transition={{ duration: 0.5, delay: index * 0.2 }}
                         className="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 shadow-lg bg-white"
                     >
-                        <img
-                            src={category.image}
-                            alt={`Image of ${category.name}`}
-                            className="w-full h-40 object-cover"
-                        />
+                        <div className="w-full h-48 flex items-center justify-center bg-gray-100">
+                            <img
+                                src={category.image}
+                                alt={`Image of ${category.name}`}
+                                className="max-w-full max-h-full object-contain" // Ensures the image fits within the container
+                            />
+                        </div>
                         <div className="p-6">
                             <h3 className="text-2xl font-semibold text-gray-800 mb-2">{category.name}</h3>
                             <p className="text-sm text-gray-600 mb-4">{category.description}</p>
