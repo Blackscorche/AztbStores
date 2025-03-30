@@ -7,7 +7,6 @@ import smartwatchesbanner from '../assets/newsmartwatches.png'; // Import smartw
 import TabBanner from '../assets/appletab.png'; // Import tablets image
 import ImacBanner from '../assets/newimac.png'; // Import iMac image
 import AccesoriesBanner from '../assets/AccesoriesBanner.jpg'; // Import accessories image
-import macbookpro from '../assets/macbookspro.jpg'; // Import MacBook Pro image
 // Updated categories with relevant routes and images
 const categories = [
     {

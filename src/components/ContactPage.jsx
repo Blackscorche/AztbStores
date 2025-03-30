@@ -21,7 +21,7 @@ const ContactPage = () => {
               className="flex items-center space-x-3 p-3 border border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all"
             >
               <Phone className="text-blue-500" />
-              <span>+123 456 7890</span>
+              <span>+2348151162929</span>
             </a>
           </li>
 
@@ -31,13 +31,13 @@ const ContactPage = () => {
               className="flex items-center space-x-3 p-3 border border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all"
             >
               <Mail className="text-blue-500" />
-              <span>contact@aztbstores.com</span>
+              <span>aztbstores@gmail.com</span>
             </a>
           </li>
 
           <li>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/+2348151162929"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-3 p-3 border border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all"
