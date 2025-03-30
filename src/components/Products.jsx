@@ -12,7 +12,7 @@ function Products() {
     { id: 1, title: 'MacBook Pro', image: macbookpro },
     { id: 2, title: 'iPhone 14 Pro', image: phone },
     { id: 3, title: 'iPad Air', image: tablet },
-    { id: 4, title: 'MacBook Air', image: macbookair },
+    { id: 4, title: 'MacBook Air', image: laptop },
     { id: 5, title: 'iPhone SE', image: iphonese },
     { id: 6, title: 'iPad Pro', image: ipadpro },
   ];
