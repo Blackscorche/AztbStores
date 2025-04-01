@@ -51,7 +51,7 @@ const ProductCategories = () => {
     return (
         <div className="p-8 bg-gray-50 min-h-screen mt-20">
             <header className="text-center mb-8">
-                <h1 className="text-4xl font-extrabold text-blue-600 mb-2">Showcase of Electronic Categories</h1>
+                <h1 className="text-4xl font-extrabold text-blue-600 mb-2">Electronic Categories</h1>
                 <h2 className="text-lg text-gray-700 mb-4">Explore the best gadgets on AZTBStores!</h2>
             </header>
 

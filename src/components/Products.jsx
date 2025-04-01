@@ -10,12 +10,12 @@ import macbookair from '../assets/macbookair.jpg'; // Import MacBook Air image
 
 function Products() {
   const products = [
-    { id: 1, title: 'MacBook Pro', image: macbookpro },
-    { id: 2, title: 'iPhone 14 Pro', image: phone },
-    { id: 3, title: 'iPad Air', image: tablet },
-    { id: 4, title: 'MacBook Air', image: macbookair },
-    { id: 5, title: 'iPhone SE', image: iphonese },
-    { id: 6, title: 'iPad Pro', image: ipadpro },
+    { id: 1, title: 'MacBook Pro', image: macbookpro, link: '/laptopcategory' },
+    { id: 2, title: 'iPhone 14 Pro', image: phone, link: '/iphonecategories' },
+    { id: 3, title: 'iPad Air', image: tablet, link: '/appletablets' },
+    { id: 4, title: 'MacBook Air', image: macbookair, link: 'laptopcategory' },
+    { id: 5, title: 'iPhone SE', image: iphonese, link: 'iphonecategories' },
+    { id: 6, title: 'iPad Pro', image: ipadpro, link: 'appletablets' },
   ];
 
   return (
@@ -26,7 +26,7 @@ function Products() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Tech Product Gallery
+      Product Gallery
       </motion.h3>
       <motion.p
         className="text-gray-600 text-lg mb-12"
@@ -41,7 +41,7 @@ function Products() {
         {products.map((product) => (
           <motion.a
             key={product.id}
-            href="#"
+            href={product.link} // Use the link property here
             className="relative group bg-gradient-to-tr from-white to-gray-100 shadow-xl rounded-xl overflow-hidden hover:scale-105 transform transition-transform duration-200"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

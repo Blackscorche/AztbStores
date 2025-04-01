@@ -40,15 +40,16 @@ const Hero = () => {
             <h4 className="text-base md:text-lg uppercase tracking-wide text-gray-500">
               Big Gadget Deals
             </h4>
-            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900">
+            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900 mb-1">
               Welcome to <span className="text-blue-500">AZTBStores</span>
             </h1>
+            <p className="text-gray-400 subheader">Great stores, Great choice</p>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed">
               Get the latest phones, laptops, and accessories at unbeatable
               prices.
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
-              <Link to="/products">
+              <Link to="/pricelist">
                 <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg cursor-pointer font-semibold transition duration-300">
                   Explore Products
                 </button>

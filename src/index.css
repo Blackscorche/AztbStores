@@ -56,3 +56,7 @@ section {
 .card {
   animation: slideUp 1s ease-in-out;
 }
+
+.subheader{
+  font-weight: 600;
+}
