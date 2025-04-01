@@ -13,9 +13,9 @@ function Products() {
     { id: 1, title: 'MacBook Pro', image: macbookpro, link: '/laptopcategory' },
     { id: 2, title: 'iPhone 14 Pro', image: phone, link: '/iphonecategories' },
     { id: 3, title: 'iPad Air', image: tablet, link: '/appletablets' },
-    { id: 4, title: 'MacBook Air', image: macbookair, link: 'laptopcategory' },
-    { id: 5, title: 'iPhone SE', image: iphonese, link: 'iphonecategories' },
-    { id: 6, title: 'iPad Pro', image: ipadpro, link: 'appletablets' },
+    { id: 4, title: 'MacBook Air', image: macbookair, link: '/laptopcategory' },
+    { id: 5, title: 'iPhone SE', image: iphonese, link: '/iphonecategories' },
+    { id: 6, title: 'iPad Pro', image: ipadpro, link: '/appletablets' },
   ];
 
   return (
